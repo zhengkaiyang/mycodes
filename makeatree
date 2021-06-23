@@ -1,0 +1,14 @@
+def fangzhi(List,a):  # 三种情况，一种2个子树都有，一种只有左子树，一种没有子树
+    last = len(List)
+    root = TreeNode(List[a])  # 制作根树
+    if 2*a+2>last:
+        return None
+    elif 2*a+2==last:
+        root.left = TreeNode(List[2*a+1])
+    else:
+        root.left = fangzhi(List,2*a+1)
+        root.right = fangzhi(List,2*a+2)
+    return root
+def makeatree(List):  # 给一个列表制作一颗树
+    a = 0 # 目前执行的根节点
+    return fangzhi(List,a)
