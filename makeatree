@@ -2,7 +2,7 @@ def fangzhi(List,a):  # 三种情况，一种2个子树都有，一种只有左�
     last = len(List)
     root = TreeNode(List[a])  # 制作根树
     if 2*a+2>last:
-        return None
+        return root
     elif 2*a+2==last:
         root.left = TreeNode(List[2*a+1])
     else:
